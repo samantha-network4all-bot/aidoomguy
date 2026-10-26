@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Authorised - AI Doomguy</title><link rel="stylesheet" href="style.css"></head><body><main>
+<h1>Authorisation received</h1>
+<p>Copy this code back to the AI Doomguy poster on your computer (it is valid for a few minutes):</p>
+<p><code id="c">(no code in the address)</code></p>
+<p><button id="b">Copy</button></p>
+<p class="small" id="e"></p>
+<script>
+const q=new URLSearchParams(location.search);const c=q.get("code");
+if(c){document.getElementById("c").textContent=c;}
+if(q.get("error")){document.getElementById("e").textContent="TikTok returned: "+q.get("error")+" "+(q.get("error_description")||"");}
+document.getElementById("b").onclick=()=>navigator.clipboard.writeText(c||"");
+</script>
+</main></body></html>
